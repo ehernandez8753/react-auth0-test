@@ -25,3 +25,5 @@ yarn-error.log*
 
 # Auth0
 /src/api/config.js
+/src/auth/config.js
+/public/close-popup/index.html

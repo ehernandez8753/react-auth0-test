@@ -4,7 +4,7 @@ const jwks = require("jwks-rsa");
 const path = require("path");
 
 const allShows = require("./data/tvShows.json");
-const allMovies = require("./data/movies");
+const allMovies = require("./data/movies.json");
 const config = require("./config.js");
 
 const router = express.Router();
@@ -23,7 +23,7 @@ const authCheck = jwt({
 })
 
 router.get("/", (req, res) => {
-    res.sendfile(path.join(__dirname, "../build/index.html"));
+    res.sendFile(path.join(__dirname, "../build/index.html"));
     //When app is built, this file will be created. Currently it is not created.
 });
 
@@ -35,7 +35,7 @@ router.get("/api/data/tvshows", (req, res) => {
     res.json(allShows);
 });
 
-router.get("/api/data/movies", (req, res) => {
+router.get("/api/data/movies", authCheck, (req, res) => {
     res.json(allMovies);
 });
 

@@ -3,18 +3,19 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './index.css';
 import App from './App';
-import Home from "./Home";
-import LoginCallback from "./LoginCallback";
+import TvShows from "./components/TvShows";
+import Movies from "./components/Movies";
 
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
 
 <Router>
-    <Switch>
-        <Route path="/callback" component={LoginCallback} />
-        <Route path="/" component={Home} />
-    </Switch>
+    {/* <Switch>
+        <Route path="/callback" component={Movies} />
+        <Route path="/" component={TvShows} />
+    </Switch> */}
+    <App />
 </Router>
 , 
 
